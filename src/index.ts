@@ -1,8 +1,8 @@
 import testData from './test.json';
-import BBD from './bbd';
+import BBDBuilder from './bbd';
+import { BlockAttribute } from './models/Block';
 
 /**
  * Library Sample Interface
  */
-// bbd.loadCanvas('root').renderBlock(testData);
-new BBD('root').renderBlock(testData);
+new BBDBuilder('root', <BlockAttribute[]>testData).renderBlock();

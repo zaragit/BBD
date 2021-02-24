@@ -1,16 +1,20 @@
-import BBD from '../src/bbd';
+import BBDBuilder from '../src/bbd';
+import { BlockAttribute } from '../src/models/Block';
 import testData from '../src/test.json';
 
 /**
- * BBD 생성 테스트
+ * BBDBuilder 생성 테스트
  */
 test('initialize BBD', () => {
-  var bbd: BBD = new BBD('root');
+  const builder: BBDBuilder = new BBDBuilder(
+    'root',
+    <BlockAttribute[]>testData
+  );
 
-  if (bbd == null) throw 'bbd is null';
-  if (bbd.RootEl == null) throw 'RootEl is null';
-  if (bbd.SvgEl == null) throw 'SvgEl is null';
-  if (bbd.TextEl == null) throw 'TextEl is null';
+  if (builder == null) throw 'bbd is null';
+  if (builder.RootEl == null) throw 'RootEl is null';
+  if (builder.SvgEl == null) throw 'SvgEl is null';
+  if (builder.TextEl == null) throw 'TextEl is null';
 
-  bbd.renderBlock(testData);
+  builder.renderBlock();
 });

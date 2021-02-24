@@ -1,23 +1,32 @@
 [
     {
-        "shape": "circle",
+        "type": "circle",
         "text": "아이템1",
         "x": 200,
         "y": 200,
         "r": 50
     },
     {
-        "shape": "circle",
+        "type": "circle",
         "text": "아이템2",
         "x": 301,
         "y": 200,
         "r": 50
     },
     {
-        "shape": "circle",
+        "type": "circle",
         "text": "아이템3",
         "x": 402,
         "y": 200,
         "r": 50
+    },
+    {
+        "type": "rect",
+        "text": "아이템3",
+        "x": 0,
+        "y": 0,
+        "r": 50,
+        "width": 200,
+        "height": 100
     }
 ]
