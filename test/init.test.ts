@@ -16,5 +16,8 @@ test('initialize BBD', () => {
   if (builder.SvgEl == null) throw 'SvgEl is null';
   if (builder.TextEl == null) throw 'TextEl is null';
 
+  if (builder.getDatas().length != testData.length)
+    throw "There's not enough Landering.";
+
   builder.renderBlock();
 });

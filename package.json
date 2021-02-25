@@ -33,7 +33,7 @@
     "d3": "^6.5.0"
   },
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "webpack serve --open",
     "build": "webpack",
     "test": "jest"
   }

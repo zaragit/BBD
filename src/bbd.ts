@@ -84,6 +84,8 @@ export default class BBDBuilder {
   renderBlock(): void {
     this.blocks.forEach((block: Block): void => {
       block.render(this.svgEl);
+
+      if (block.text) block.text.render(this.textEl);
     });
   }
 

@@ -28,5 +28,21 @@
         "r": 50,
         "width": 200,
         "height": 100
+    },
+    {
+        "type": "hexagon",
+        "text": "아이템4",
+        "x": 300,
+        "y": 0,
+        "width": 200,
+        "height": 100
+    },
+    {
+        "type": "hexagon",
+        "text": "아이템5",
+        "x": 300,
+        "y": 200,
+        "width": 200,
+        "height": 100
     }
 ]
