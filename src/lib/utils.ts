@@ -1,6 +1,5 @@
 import * as d3 from 'd3';
 import { DragBehavior } from 'd3';
-import { Block } from '../models/Block';
 
 /**
  * create d3 drag event

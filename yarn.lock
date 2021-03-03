@@ -735,17 +735,6 @@
     "@babel/helper-plugin-utils" "^7.12.13"
 
 "@babel/preset-env@^7.13.0":
-<<<<<<< HEAD
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.13.0.tgz#6ecc3daf63627792ec03d1076dbb54b4928a9e0d"
-  integrity sha512-UeU4bHlskjdwqNnaiBEYTXbL7dtuUDtOOkcS2c64wR2UqwUMzlRsvxoKQtsVJR579dS3Wmxnb7HRc9U5mSzQhA==
-  dependencies:
-    "@babel/compat-data" "^7.13.0"
-    "@babel/helper-compilation-targets" "^7.13.0"
-    "@babel/helper-plugin-utils" "^7.13.0"
-    "@babel/helper-validator-option" "^7.12.17"
-    "@babel/plugin-proposal-async-generator-functions" "^7.13.0"
-=======
   version "7.13.5"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.13.5.tgz#68b3bbc821a97fcdbf4bd0f6895b83d07f84f33e"
   integrity sha512-xUeKBIIcbwxGevyWMSWZOW98W1lp7toITvVsMxSddCEQy932yYiF4fCB+CG3E/MXzFX3KbefgvCqEQ7TDoE6UQ==
@@ -755,7 +744,6 @@
     "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-proposal-async-generator-functions" "^7.13.5"
->>>>>>> feature/models
     "@babel/plugin-proposal-class-properties" "^7.13.0"
     "@babel/plugin-proposal-dynamic-import" "^7.12.17"
     "@babel/plugin-proposal-export-namespace-from" "^7.12.13"
@@ -814,15 +802,9 @@
     "@babel/plugin-transform-unicode-regex" "^7.12.13"
     "@babel/preset-modules" "^0.1.3"
     "@babel/types" "^7.13.0"
-<<<<<<< HEAD
-    babel-plugin-polyfill-corejs2 "^0.1.2"
-    babel-plugin-polyfill-corejs3 "^0.1.2"
-    babel-plugin-polyfill-regenerator "^0.1.1"
-=======
     babel-plugin-polyfill-corejs2 "^0.1.4"
     babel-plugin-polyfill-corejs3 "^0.1.3"
     babel-plugin-polyfill-regenerator "^0.1.2"
->>>>>>> feature/models
     core-js-compat "^3.9.0"
     semver "7.0.0"
 
@@ -2016,31 +1998,6 @@ babel-plugin-jest-hoist@^26.6.2:
     "@types/babel__core" "^7.0.0"
     "@types/babel__traverse" "^7.0.6"
 
-<<<<<<< HEAD
-babel-plugin-polyfill-corejs2@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.1.2.tgz#3e5e7ef339dd84ca34c6a20605e6d4ef62aba3b1"
-  integrity sha512-sSGAKN95gTnXjg3RtGI9QBW/xSqXy5fo2Bt+W5WkhconIO+QxuDZChyjZYiY90xE3MQRI1k73Dh/HAe86cWf8A==
-  dependencies:
-    "@babel/compat-data" "^7.11.0"
-    "@babel/helper-define-polyfill-provider" "^0.1.0"
-    semver "^6.1.1"
-
-babel-plugin-polyfill-corejs3@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.1.2.tgz#39b0d46744360738237bd54052af852c84d74ebf"
-  integrity sha512-7neRvPKcdvZ4X9IpYBCmT+ceVUKC1idX7DJN5sRtiPP9d0ABD6k5x/QvXTiz/9wMp86FBDX6Gz0g7WQY2lRfgw==
-  dependencies:
-    "@babel/helper-define-polyfill-provider" "^0.1.0"
-    core-js-compat "^3.8.1"
-
-babel-plugin-polyfill-regenerator@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.1.1.tgz#3b9b907d1554747ff131bd5c6da81713e342db73"
-  integrity sha512-QZlnPDLX2JEXP8RQGeP4owNxRKUAqHD+rdlyRHV8ENeCcI9ni2qT9IzxT9jYW1aZrxCgehD31LztlMaA68zoqQ==
-  dependencies:
-    "@babel/helper-define-polyfill-provider" "^0.1.0"
-=======
 babel-plugin-polyfill-corejs2@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.1.5.tgz#8fc4779965311393594a1b9ad3adefab3860c8fe"
@@ -2064,7 +2021,6 @@ babel-plugin-polyfill-regenerator@^0.1.2:
   integrity sha512-hRjTJQiOYt/wBKEc+8V8p9OJ9799blAJcuKzn1JXh3pApHoWl1Emxh2BHc6MC7Qt6bbr3uDpNxaYQnATLIudEg==
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.1.2"
->>>>>>> feature/models
 
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"

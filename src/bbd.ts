@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
-import { generateD3DragEvent } from './lib/utils';
-import { Block, BlockAttribute, createBlock } from './models/Block';
+import { BlockProps } from './models';
+import { BlockRenderer } from './models/Renderer';
 
 /**
  * BBD Builder
@@ -13,42 +13,27 @@ export default class BBDBuilder {
   /**
    * Selection
    */
-  private rootEl: d3.Selection<d3.BaseType, unknown, HTMLElement, any>;
-  private svgEl: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
-  private textEl: d3.Selection<HTMLDivElement, unknown, HTMLElement, any>;
-
-  /**
-   * Init Data
-   */
-  private datas: BlockAttribute[];
-  private blocks: Block[] = [];
+  private root: d3.Selection<d3.BaseType, unknown, HTMLElement, any>;
+  private canvas: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
 
   /**
    * Options
    */
-  private drag: boolean = false;
-  private click: boolean = false;
+  private draggable: boolean = false;
 
-  /**
-   * create
-   * @param rootEl
-   * @param datas
-   */
-  constructor(rootEl: HTMLElement | string, datas: BlockAttribute[]) {
-    this.datas = datas;
+  private arrProps: BlockProps[];
+  private arrRenderers: BlockRenderer[];
 
-    const id =
-      typeof rootEl === 'string'
-        ? ('#' + rootEl).replace(/##/, '#')
-        : rootEl.id;
+  constructor(rootEl: HTMLElement | string, arrProps: BlockProps[]) {
+    this.arrProps = arrProps;
 
-    this.rootEl = d3.select(id);
+    this.arrRenderers = this.arrProps.map((p) => new BlockRenderer(p));
 
-    datas.forEach((d) => {
-      this.blocks.push(createBlock(d));
-    });
+    this.root = d3.select(
+      '#' + (typeof rootEl === 'string' ? rootEl.replace(/#/, '') : rootEl.id)
+    );
 
-    this.svgEl = this.rootEl
+    this.canvas = this.root
       .append('svg')
       .attr('width', '100%')
       .attr('height', '100%')
@@ -57,55 +42,29 @@ export default class BBDBuilder {
         'left: 0px; top: 0px; position: absolute; background-image: none;'
       );
 
-    this.textEl = this.rootEl
-      .append('div')
-      .attr('id', 'bbd_tb_container')
-      .attr(
-        'style',
-        'left: 0px; top: 0px; position: absolute; background-image: none; width: 100%; height: 100%; pointer-events: none;'
-      );
-
     return this;
   }
 
-  /**
-   * activate events
-   */
-  setDragEvent(): void {
-    this.drag = true;
-  }
-  setClickEvent(): void {
-    this.click = true;
+  setDraggable(draggable: boolean): BBDBuilder {
+    this.draggable = draggable;
+    return this;
   }
 
   /**
    * render
    */
   renderBlock(): void {
-    this.blocks.forEach((block: Block): void => {
-      block.render(this.svgEl);
+    this.arrRenderers.forEach((renderer: BlockRenderer): void => {
+      const d3Selection: d3.Selection<
+        SVGGElement,
+        unknown,
+        HTMLElement,
+        any
+      > = this.canvas.append('g').attr('class', 'block_container');
 
-      if (block.text) block.text.render(this.textEl);
+      renderer.renderBlock(d3Selection, this.draggable);
+
+      renderer.renderSelection(d3Selection);
     });
-  }
-
-  /**
-   * Getter
-   */
-  get RootEl(): d3.Selection<d3.BaseType, unknown, HTMLElement, any> {
-    return this.rootEl;
-  }
-  get SvgEl(): d3.Selection<SVGSVGElement, unknown, HTMLElement, any> {
-    return this.svgEl;
-  }
-  get TextEl(): d3.Selection<HTMLDivElement, unknown, HTMLElement, any> {
-    return this.textEl;
-  }
-
-  /**
-   * export datas
-   */
-  getDatas(): BlockAttribute[] {
-    return this.datas;
   }
 }

@@ -1,8 +1,8 @@
 import testData from './test.json';
 import BBDBuilder from './bbd';
-import { BlockAttribute } from './models/Block';
+import { BlockProps } from './models';
 
 /**
  * Library Sample Interface
  */
-new BBDBuilder('root', <BlockAttribute[]>testData).renderBlock();
+new BBDBuilder('root', <BlockProps[]>testData).renderBlock();
